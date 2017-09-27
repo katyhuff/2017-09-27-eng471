@@ -1,0 +1,585 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Nuclear Power</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+                                        <h2>Do It For Science </h2>
+					<h3>PyCon 2017</h3>
+                                        <h4>Portland, OR</h4>
+                                        <h4>May 20, 2017</h4>
+					<br/>
+					<h3>Kathryn (Katy) Huff</h3>
+				</section>
+				<section>
+                                        <!--<section>
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://uchicago.edu"
+                                                  class="image"><img
+                                                  height="300"
+                                                  src="http://geosci.uchicago.edu/~kite/university.seal.rgb.maroon.jpg"
+                                                  alt="Physics, University of Chicago"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <a
+                                                  href="https://engr.wisc.edu/ep.html"
+                                                  class="image"><img
+                                                  height="300"
+                                                  src="https://biochem.wisc.edu/sites/default/files/intranet/medialab/clipart/UW_crest.gif"
+                                                  alt="Nuclear Engineering and Engineering Physics, University of Wisconsin - Madison"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://nuc.berkeley.edu"
+                                                  class="image"><img
+                                                  height="300"
+                                                  src="http://www.berkeley.edu/brand/img/seals/ucbseal_139_540.png"
+                                                  alt="Nuclear Engineering, University of California, Berkeley"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://arfc.npre.illinois.edu"
+                                                  class="image"><img
+                                                  height="300"
+                                                  src="https://upload.wikimedia.org/wikipedia/en/thumb/1/18/UIUC_seal.svg/1024px-UIUC_seal.svg.png"
+                                                  alt="Nuclear, Plasma, and Radiological Engineering, University of Illinois at Urbana-Champaign"></a>
+                                                </span>
+                                        </section> -->
+                                        <section>
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://scipy.org"
+                                                  class="image"><img
+                                                  height="100"
+                                                  src="http://scipy.org/_static/images/scipycentral.png"
+                                                  alt="Scipy"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://thehackerwithin.github.io"
+                                                  class="image"><img
+                                                  height="100"
+                                                  src="http://thehackerwithin.github.io/images/thw_icon.png"
+                                                  alt="THW"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://software-carpentry.org"
+                                                  class="image"><img
+                                                  height="100"
+                                                  src="http://bids.berkeley.edu/sites/default/files/styles/450x254/public/projects/software-carpentry-450x254.png?itok=0XnUCwrr"
+                                                  alt="Software Carpentry"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://datacarpentry.org"
+                                                  class="image"><img
+                                                  height="100"
+                                                  src="./images/data-carpentry.png"
+                                                  alt="Data Carpentry"></a>
+                                                </span>
+
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://joss.theoj.org"
+                                                  class="image"><img
+                                                  height="100"
+                                                  src="./images/joss.png"
+                                                  alt="JOSS"></a>
+                                                </span>
+
+                                                <br/>
+
+                                                <span class="fragment">
+                                                <a href="http://bids.berkeley.edu"
+                                                  class="image"><img
+                                                  height="100"
+                                                  src="http://bids.berkeley.edu/sites/all/themes/bids/logo.png"
+                                                  alt="BIDS Logo"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://physics.codes"
+                                                  class="image"><img
+                                                  height="200"
+                                                  src="http://physics.codes/images/ecip.jpg"
+                                                  alt="book"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://http://www.ucpress.edu/book.php?isbn=9780520294752"
+                                                  class="image"><img
+                                                  height="200"
+                                                  src="./images/2016-prr-book.jpg"
+                                                  alt="book"></a>
+                                                </span>
+
+                                                <br/>
+
+                                                <span class="fragment">
+                                                <a 
+                                                href="http://ncsa.illinois.edu" 
+                                                class="image"><img 
+                                                height="100" 
+                                                src="http://www.ncsa.illinois.edu/assets/img/logos_ncsa.png" 
+                                                alt="NCSA Logo"></a> 
+                                                </span>
+                                                <span class="fragment">
+                                                <a 
+                                                href="http://arfc.npre.illinois.edu" 
+                                                class="image"><img 
+                                                height="150" 
+                                                src="./images/arfc-logo.png" 
+                                                alt="ARFC Logo"></a>
+                                                </span>
+
+                                                <br/>
+
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://fuelcycle.org"
+                                                  class="image"><img
+                                                  height="100"
+                                                  src="http://fuelcycle.org/_images/logo2_bike.gif"
+                                                  alt="cyclus"></a>
+                                                <a href="http://pyrk.github.io"
+                                                  class="image"><img
+                                                  height="100"
+                                                  src="http://pyrk.github.io/_images/logo.png"
+                                                  alt="pyrk"></a>
+                                                <a href="http://pyne.io"
+                                                  class="image"><img
+                                                  height="100"
+                                                  src="http://bids.berkeley.edu/sites/default/files/styles/450x254/public/projects/pyne-450x254.png?itok=rdkh0T8e"
+                                                  alt="pyne"></a>
+                                                <a
+                                                  href="http://github.com/arfc/moltres"
+                                                  class="image"><img
+                                                  height="100"
+                                                  src="http://arfc.github.io/img/research/moltres.jpg"
+                                                  alt="moltres"></a>
+                                                </span>
+                                        </section>
+                    <section>
+                        <a href="http://rationalwiki.org/w/images/thumb/0/0e/Fission.svg/800px-Fission.svg.png"
+     class="image"><img
+  height="100%"
+  src="http://rationalwiki.org/w/images/thumb/0/0e/Fission.svg/800px-Fission.svg.png"
+  alt="Fission."></a>
+                    </section>
+                    <section>
+                        <a href="http://rationalwiki.org/w/images/thumb/1/1f/Chainreaction.svg/715px-Chainreaction.svg.png"
+     class="image"><img
+  height="500"
+  src="http://rationalwiki.org/w/images/thumb/1/1f/Chainreaction.svg/715px-Chainreaction.svg.png"
+  alt="Chain reaction"></a>
+                    </section>
+					<section data-background-image="https://upload.wikimedia.org/wikipedia/commons/a/a0/PressurizedWaterReactor.gif" data-background-size="contain">
+					</section>
+                                </section>
+
+
+
+
+                                <section>
+                    <section>
+                                                <iframe src="https://whatisnuclear.com/img/nuclear_timeline.png"
+                                                frameBorder="0" width="100%"
+                                                height="600" marginwidth="0"
+                                                marginheight="0" scrolling="yes" style="border:0px; margin-bottom:5px; max-width: 100%;"
+                                                allowfullscreen> </iframe>
+                                        </section>
+                    <section
+                        data-background="./images/reactor-tree.png" data-background-size="contain">
+                    </section>
+                    <section data-background="./images/reactor-tree.png" data-background-size="contain" style="background: rgba(255, 255, 255, 0.95);">
+                        <p class="fragment">1943: Argonne</p>
+                        <p class="fragment">Lemont, IL</p>
+                    </section>
+                    <section
+                        data-background="./images/reactor-tree.png" data-background-size="contain">
+                    </section>
+                    <section data-background="./images/ebrI.jpg" data-background-size="contain">
+                                        </section>
+                    <section data-background="./images/ebrI.jpg" data-background-size="contain" style="background: rgba(255, 255, 255, 0.95);">
+                        <p class="fragment">EBR I</p>
+                    </section>
+                    <section
+                                                data-background="./images/ebrI_bulbs.jpg" data-background-size="contain">
+                                        </section>
+                    <section data-background="./images/ebrI_bulbs.jpeg" data-background-size="contain" style="background: rgba(255, 255, 255, 0.95);">
+                        <p class="fragment">August 24, 1951</p>
+                    </section>
+                    <section data-background="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/BORAX_III.jpg/1280px-BORAX_III.jpg"
+ data-background-size="contain">
+                                        </section>
+                    <section
+ data-background="./images/borax_arco.jpg" data-background-size="contain">
+                                        </section>
+                    <section data-background="./images/borax_arco.jpg" data-background-size="contain" style="background: rgba(255, 255, 255, 0.95);">
+                        <p class="fragment">BORAX III, 1955</p>
+                                        </section>
+                    <section data-background="./images/fermi1.jpg" data-background-size="contain">
+                    </section>
+                    <section
+                                                data-background="./images/fermi1.jpg" data-background-size="contain" style="background: rgba(255, 255, 255, 0.95);">
+                        <p class="fragment">Fermi I, 1966-1966</p>
+                    </section>
+                                </section>
+                                <section>
+                    <section data-background="./images/reactor-tree.png" data-background-size="contain">
+                    </section>
+                    <section data-background="http://twt-thumbs.washtimes.com/media/image/2014/05/14/ap7705270176_2_c0-909-1977-2060_s575x335.jpg?ebc641cebceae4c776d8447533dcf29b012725ed" data-background-size="contain">
+                    </section>
+                    <section data-background="http://twt-thumbs.washtimes.com/media/image/2014/05/14/ap7705270176_2_c0-909-1977-2060_s575x335.jpg?ebc641cebceae4c776d8447533dcf29b012725ed" data-background-size="contain" style="background: rgba(255, 255, 255, 0.95);">
+                                                <p class="fragment"><small>
+An academic reactor or reactor plant almost always has the following basic characteristics: (1) It is simple. (2) It is small. (3) It is cheap. (4) It is light. (5) It can be built very quickly. (6) It is very flexible in purpose.  (7) Very little development will be required. It will use off-the-shelf components. (8) The reactor is in the study phase. It is not being built now.
+                                                </small></p>
+                                                <p class="fragment"><small>
+On the other hand a practical reactor can be distinguished by the following
+characteristics: (1) It is being built now. (2) It is behind schedule. (3) It
+requires an immense amount of development on apparently trivial items. (4) It
+is very expensive. (5) It takes a long time to build because of its engineering
+development problems. (6) It is large. (7) It is heavy. (8) It is complicated.  </small></p>
+                    </section>
+                    <section
+                        data-background="./images/reactor-tree.png" data-background-size="contain">
+                    </section>
+                    <section data-background="./images/uss_nautilus.jpg" data-background-size="contain">
+                                        </section>
+                    <section data-background="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Shippingport_LOC_135430pu.jpg/750px-Shippingport_LOC_135430pu.jpg" data-background-size="contain">
+                                        </section>
+                    <section data-background="./images/reactor-tree.png" data-background-size="contain" style="background: rgba(255, 255, 255, 0.95);">
+<p class="fragment">USS Nautilus</p>
+                    </section>
+                    <section data-background="https://s-media-cache-ak0.pinimg.com/736x/56/07/79/56077968394677d43b817030bdc228c1.jpg" data-background-size="contain">
+                                        </section>
+					<section data-background-iframe="https://embed.polleverywhere.com/discourses/VFYpVleu0ncXQxl?controls=none&short_poll=true">
+					</section>
+					<section data-background-iframe="https://earth.nullschool.net" data-background-interactive>
+            <a class="twitter-timeline"  href="https://twitter.com/search?q=%23pycon2017%20%23challenge" data-widget-id="864914999675957253">Tweets about #pycon2017 #challenge</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					</section>
+					</section>
+                                </section>
+                                <section>
+					<section data-background-image="https://upload.wikimedia.org/wikipedia/commons/9/9d/Stones-in-water.jpg" data-background-size="cover" style="background: rgba(255, 255, 255, 0.80);">
+					<h1>Water</h1>
+					</section>
+					<section data-background-image="https://upload.wikimedia.org/wikipedia/commons/9/9d/Stones-in-water.jpg" data-background-size="cover" style="background: rgba(255, 255, 255, 0.80);">
+					<p>US EPA WNTR: Water Network Tool for Resilience</p>
+					</section>
+					<section data-background-image="https://upload.wikimedia.org/wikipedia/commons/9/9d/Stones-in-water.jpg" data-background-size="cover" style="background: rgba(255, 255, 255, 0.80);">
+<img src="http://wntr.readthedocs.io/en/latest/_images/overview.png"/>
+					</section>
+					<section data-background-image="https://upload.wikimedia.org/wikipedia/commons/9/9d/Stones-in-water.jpg" data-background-size="cover" style="background: rgba(255, 255, 255, 0.80);">
+					<a href="https://github.com/USEPA/WNTR">github.com/USEPA/WNTR has 12 contributors.</a>
+					</section>
+					<section data-background-image="https://upload.wikimedia.org/wikipedia/commons/9/9d/Stones-in-water.jpg" data-background-size="cover" style="background: rgba(255, 255, 255, 0.80);">
+<img src="https://github.com/OGGM/oggm/raw/master/docs/_static/logo.png">
+					</section>
+					<section data-background-image="https://upload.wikimedia.org/wikipedia/commons/9/9d/Stones-in-water.jpg" data-background-size="cover" style="background: rgba(255, 255, 255, 0.80);">
+<img src="https://github.com/OGGM/oggm/raw/master/docs/_static/ex_tasman.jpg">
+					</section>
+					<section data-background-image="https://upload.wikimedia.org/wikipedia/commons/9/9d/Stones-in-water.jpg" data-background-size="cover" style="background: rgba(255, 255, 255, 0.80);">
+					<a href="https://github.com/OGGM/oggm">github.com/OGGM/oggm has 43 open issues.</a>
+					</section>
+                                </section>
+                                <section>
+					<section data-background-iframe="https://earth.nullschool.net" data-background-interactive style="background: rgba(255, 255, 255, 0.80);">
+					<h1>Climate</h1>
+					</section>
+					<section data-background-iframe="https://earth.nullschool.net" data-background-interactive>
+					</section>
+					<section data-background-iframe="https://earth.nullschool.net" data-background-interactive style="background: rgba(255, 255, 255, 0.80);">
+					<a href="https://github.com/cambecc/earth">github.com/cambecc/earth has 30 open issues.</a>
+					</section>
+					<section data-background-image="http://aospy.readthedocs.io/en/latest/_images/aospy_logo.png" data-background-size="contain" style="background: rgba(255, 255, 255, 0.80);">
+aospy: automated climate data analysis and management
+					</section>
+					<section data-background-image="http://aospy.readthedocs.io/en/latest/_images/aospy_logo.png" data-background-size="contain" style="background: rgba(255, 255, 255, 0.80);">
+<img src="http://aospy.readthedocs.io/en/latest/_images/plot_av.png">
+					</section>
+					<section 
+                                                data-background-image="http://aospy.readthedocs.io/en/latest/_images/aospy_logo.png" 
+                                                data-background-size="contain" style="background: rgba(255, 255, 255, 0.80);">
+<a href="github.com/spencerahill/aospy">github.com/spencerahill/AOSPy has 54 open issues</a>
+					</section>
+					<section 
+                                        data-background-image="http://arm-doe.github.io/pyart/dev/_images/plot_attenuation_1.png" 
+                                        data-background-size="contain" >
+					</section>
+					<section 
+                                                data-background-image="http://arm-doe.github.io/pyart/dev/_images/plot_attenuation_1.png" 
+                                                data-background-size="contain" style="background: rgba(255, 255, 255, 0.80);">
+                                                The Python-ARM Radar Toolkit. A 
+                                                data model driven interactive 
+                                                toolkit for working with 
+                                                weather radar data. 
+					</section>
+					<section 
+                                                data-background-image="http://arm-doe.github.io/pyart/dev/_images/plot_attenuation_1.png" 
+                                                data-background-size="contain" style="background: rgba(255, 255, 255, 0.80);">
+<a href="https://github.com/ARM-DOE/pyart">github.com/ARM-DOE/pyart has 52 open issues.</a>
+					</section>
+                                </section>
+                                <section>
+					<section data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/e1/Earth%27s_City_Lights_by_DMSP%2C_1994-1995_%28large%29.jpg" data-background-interactive style="background: rgba(255, 255, 255, 0.80);">
+					<h1>Energy</h1>
+					</section>
+					<section data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/e1/Earth%27s_City_Lights_by_DMSP%2C_1994-1995_%28large%29.jpg" data-background-interactive style="background: rgba(255, 255, 255, 0.80);">
+                        <a href="http://fuelcycle.org" class="image"> <img src="http://fuelcycle.org/_images/logo2_bike.gif" alt="image generated by Anthony Scopatz, Paul P.H.  Wilson, and Katy Huff"> </a>
+                        <h2>A Nuclear Fuel Cycle Simulation Framework</h2>
+                    </section>
+                        <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/e1/Earth%27s_City_Lights_by_DMSP%2C_1994-1995_%28large%29.jpg" data-background-interactive style="background: rgba(255, 255, 255, 0.80);">
+                        <h3>The Nuclear Fuel Cycle</h3>
+                        <small><p>Hundreds of discrete facilities mine,
+                        mill, convert, fabricate,
+                        transmute, recycle, and store
+                        nuclear material.
+                                </p></small>
+                        <a href="./images/simulations.png" class="image"><img
+                                                      width="80%"
+           src="./images/simulations.png" alt="from Paul Lisowski"></a>
+                    </section>
+                        <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/e1/Earth%27s_City_Lights_by_DMSP%2C_1994-1995_%28large%29.jpg" data-background-interactive style="background: rgba(255, 255, 255, 0.80);" data-transition="none">
+                        <h3>Agent Based Systems Analysis</h3>
+                        <small>
+                        <p>An agent-based simulation
+                        is made up of actors and
+                        communications between those
+                        actors.
+                        </p>
+                        </small>
+                        <a
+          href="./images/simulations.png"
+       class="image"><img
+       width="80%" src="./images/simulations.png" alt="from Paul Lisowski"></a>
+                    </section>
+                        <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/e1/Earth%27s_City_Lights_by_DMSP%2C_1994-1995_%28large%29.jpg" data-background-interactive style="background: rgba(255, 255, 255, 0.80);" data-transition="none">
+                                <h3>Agent Based Systems Analysis</h3>
+                        <p>A facility might create material.</p>
+                        <a href="./images/sourcefacility.png" class="image"><img
+                                                         width="100%"
+          src="./images/sourcefacility.png" alt="source"></a>
+                    </section>
+                        <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/e1/Earth%27s_City_Lights_by_DMSP%2C_1994-1995_%28large%29.jpg" data-background-interactive style="background: rgba(255, 255, 255, 0.80);" data-transition="none">
+                        <h3>Agent Based Systems Analysis</h3>
+                        <p>It might request material.</p>
+                        <a
+          href="./images/sinkfacility.png"
+       class="image"><img
+       width="100%"
+       src="./images/sinkfacility.png" alt="sink"></a>
+                    </section>
+                        <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/e1/Earth%27s_City_Lights_by_DMSP%2C_1994-1995_%28large%29.jpg" data-background-interactive style="background: rgba(255, 255, 255, 0.80);" data-transition="none">
+                                <h3>Agent Based Systems Analysis</h3>
+                        <p>It might do both.</p>
+                        <a
+          href="./images/facility.png"
+       class="image"><img
+       width="100%"
+       src="./images/facility.png" alt="fac"></a>
+                    </section>
+                        <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/e1/Earth%27s_City_Lights_by_DMSP%2C_1994-1995_%28large%29.jpg" data-background-interactive style="background: rgba(255, 255, 255, 0.80);" data-transition="none">
+                        <h3>Agent Based Systems Analysis</h3>
+                        <small>
+                        <p>Even simple fuel cycles have many independent agents.</p>
+                        </small>
+                        <a href="./images/materials.png" class="image"><img
+                                                    width="80%"
+         src="./images/materials.png" alt="material flow"></a>
+                    </section>
+                        <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/e1/Earth%27s_City_Lights_by_DMSP%2C_1994-1995_%28large%29.jpg" data-background-interactive style="background: rgba(255, 255, 255, 0.80);" data-transition="none">
+                        <h2>Transition Analysis</h2>
+                        <a href="http://fuelcycle.org" class="image"><img
+                     height="500"
+     src="./images/pow_by_r_type.png"
+  alt="power deployed by reactor type."></a>
+                        <p>Power generated by reactor type.</p>
+                    </section>
+                        <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/e1/Earth%27s_City_Lights_by_DMSP%2C_1994-1995_%28large%29.jpg" data-background-interactive style="background: rgba(255, 255, 255, 0.80);" data-transition="none">
+                        <h2>Material Tracking</h2>
+                        <a href="http://fuelcycle.org" class="image"><img
+                     height="500"
+     src="./images/cyclus_fuel.png"
+  alt="EU scenario tracking fuel."></a>
+                        <p>Fuel movement by type.</p>
+                    </section>
+                        <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/e1/Earth%27s_City_Lights_by_DMSP%2C_1994-1995_%28large%29.jpg" data-background-interactive style="background: rgba(255, 255, 255, 0.80);" data-transition="none">
+                            <a 
+                                    href="http://fuelcycle.org/">github.com/cyclus/cyclus 
+                                    has 62 open issues</a>
+					</section>
+					<section data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/e1/Earth%27s_City_Lights_by_DMSP%2C_1994-1995_%28large%29.jpg" data-background-interactive style="background: rgba(255, 255, 255, 0.80);">
+                                                <h2>PyNE</h2>
+                                                <a href="http://pyne.io" 
+                                                   class="image"><img 
+                                                        width="40%" 
+                                                        src="http://pyne.io/_static/pyne_icon_small.png"><a>
+                                        </section>
+                        <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/e1/Earth%27s_City_Lights_by_DMSP%2C_1994-1995_%28large%29.jpg" data-background-interactive style="background: rgba(255, 255, 255, 0.80);" data-transition="none">
+                        <a href="http://pyne.io/index.html" class="image"><img
+                     height="500"
+     src="./images/pyne-comp.png"
+  alt="pyne."></a>
+                    </section>
+                        <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/e1/Earth%27s_City_Lights_by_DMSP%2C_1994-1995_%28large%29.jpg" data-background-interactive style="background: rgba(255, 255, 255, 0.80);" data-transition="none">
+                                <a href="http://github.com/pyne/pyne">github.com/pyne/pyne has 90 open issues.</a>
+                        </section>
+                        <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/e1/Earth%27s_City_Lights_by_DMSP%2C_1994-1995_%28large%29.jpg" data-background-interactive style="background: rgba(255, 255, 255, 0.80);" data-transition="none">
+                                                <a href="https://github.com/yt-project/yt">neutron diffusion vizualized with yt</a>
+                                                <br/>
+                                <img src="./images/pyne_yt.jpg">
+                                        </section>
+					<section data-background-video="./images/yt-vid.mp4">
+					</section>
+					<section data-background-video="./images/yt-vid.mp4"
+                                                style="background: rgba(255, 255, 255, 0.80);">
+                                                <a href="https://github.com/yt-project/yt">github.com/yt-project/yt has 91 open issues.</a>
+					</section>
+                                </section>
+                                <section>
+                                        <section data-background-image="./images/health-pixabay.png" data-background-size="contain" style="background: rgba(255, 255, 255, 0.80);">
+                                                <h1>Health</h1>
+                                        </section>
+                                        <section data-background-image="./images/health-pixabay.png" data-background-size="contain" style="background: rgba(255, 255, 255, 0.80);">
+                                                <iframe width="640" 
+                                                        height="360" 
+                                                        src="https://www.youtube.com/embed/fongTLixGvw" 
+                                                        frameborder="0" 
+                                                        allowfullscreen></iframe>
+                                        </section>
+
+                                        <section data-background-image="./images/health-pixabay.png" data-background-size="contain" style="background: rgba(255, 255, 255, 0.90);">
+					pulse2percept: Models for Retinal Prosthetics
+                                        </section>
+                                        <section data-background-image="./images/health-pixabay.png" data-background-size="contain" style="background: rgba(255, 255, 255, 0.90);">
+					<img src="https://raw.githubusercontent.com/uwescience/pulse2percept/master/doc/_static/model.jpg"/>
+                                        </section>
+                                        <section data-background-image="./images/health-pixabay.png" data-background-size="contain" style="background: rgba(255, 255, 255, 0.90);">
+                                                <img src="./images/pulse2percept.png">
+                                        </section>
+                                        <section data-background-image="./images/health-pixabay.png" data-background-size="contain" style="background: rgba(255, 255, 255, 0.90);">
+					<a href=="http://github.com/uwescience/pulse2percept">github.com/uwescience/pulse2percept has 4 open issues</a>
+                                        </section>
+					<section data-background-image="http://nipy.org/img/nipy.svg" data-background-size="contain">
+                                        </section>
+					<section data-background-image="http://nipy.org/img/nipy.svg" data-background-size="contain" style="background: rgba(255, 255, 255, 0.80);">
+                                                <a href="https://github.com/nipy/nipy">github.com/nipy/nipy has 27 open issues</a>
+                                        </section>
+					<section data-background-image="http://martinos.org/mne/stable/_images/sphx_glr_plot_mne_inverse_psi_visual_001.png" data-background-size="contain">
+                                                <!--(http://martinos.org/mne/stable/auto_examples/index.html)-->
+                                        </section>
+					<section data-background-image="http://martinos.org/mne/stable/_images/sphx_glr_plot_mne_inverse_psi_visual_001.png" data-background-size="contain" style="background: rgba(255, 255, 255, 0.80);">
+                                                <a href="https://github.com/mne-tools/mne-python/issues/">MNE 
+                                                        has 181 open issues</a>
+                                        </section>
+				</section>
+				<section>
+					<section data-background-image="http://pint.readthedocs.io/en/0.8/_images/logo-full.jpg" data-background-size="contain">
+
+                                        </section>
+					<section data-background-image="http://pint.readthedocs.io/en/0.8/_images/logo-full.jpg" data-background-size="contain">
+                    <h2>Pint</h2>
+                    <span class="fragment">
+<pre><code class="python" data-trim data-noescape>
+In  [1]: import pint
+         ureg = pint.UnitRegistry()
+         3*ureg.meter + 4 * ureg.cm
+Out [1]: &lt;Quantity(3.04, 'meter')&gt;
+</code></pre>
+                    </span>
+                </section>
+					<section data-background-image="http://pint.readthedocs.io/en/0.8/_images/logo-full.jpg" data-background-size="contain" style="background: rgba(255, 255, 255, 0.80);">
+                                                <p>github.com/hgrecco/pint has 97 open issues</p>
+                                        </section>
+                </section>
+                <section>
+                <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Knowledge-sharing.jpg/1024px-Knowledge-sharing.jpg">
+                </section>
+                <section data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Knowledge-sharing.jpg/1024px-Knowledge-sharing.jpg" style="background: rgba(255, 255, 255, 0.80);">
+                       <img src="./images/joss.png">
+                </section>
+                <section data-background-image="./images/joss-site.png" 
+                        data-background-size="cover">
+                </section>
+				</section>
+				<section>
+					<section>
+                                                <h2>Four Simple Steps</h2>
+                                                <ul>
+                                                        <li class="fragment">Be curious</li>
+                                                        <li class="fragment">Pick a project</li>
+                                                        <li class="fragment">Contribute to science</li>
+                                                        <li class="fragment">Save the world</li>
+                                                </ul>
+                                        </section>
+					<section data-background-image="./images/thanks.jpg" 
+                                                data-background-size="contain">
+                                        </section>
+					<section data-background-image="./images/thanks.jpg" 
+                                                data-background-size="contain" style="background: rgba(255, 255, 255, 0.80);">
+					    <h1>THE END</h1>
+					    <a href="https://katyhuff.github.io/2017-05-20-pycon">katyhuff.github.io/2017-05-20-pycon</a>
+					    <br/>
+                                            <small>
+					    <a rel="license" 
+                                                    href="http://creativecommons.org/licenses/by/4.0/"><img 
+                                                    alt="Creative Commons 
+                                            License" style="border-width:0" 
+                                            src="https://i.creativecommons.org/l/by/4.0/88x31.png" 
+                                    /></a><br /><span 
+                                    xmlns:dct="http://purl.org/dc/terms/" 
+                            property="dct:title">Do It For Science: PyCon 2017</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://katyhuff.github.io" property="cc:attributionName" rel="cc:attributionURL">Kathryn Huff</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://katyhuff.github.io/2017-05-20-pycon" rel="dct:source">http://katyhuff.github.io/2017-05-20-pycon</a>.
+                                            </small>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				math: {
+						mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+						config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+					    },
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
